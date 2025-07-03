@@ -14,9 +14,5 @@ export class TablaPrincipalComponent {
   @Output() estadisticas: EventEmitter<number> = new EventEmitter<number>();
   emitirClub(id: number) {
     this.club.emit(id);
-
-
   }
-
-
 }

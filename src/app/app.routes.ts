@@ -8,15 +8,12 @@ export const routes: Routes = [
   {
     path: "pantalla-principal",
     component: PantallaPrincipalComponent,
-
   },
-
   {
     path: "estadisticas/:id",
     component: EstadisticasComponent,
   },
   {
-
     path: "club/:id",
     component: ClubComponent,
   },
@@ -24,6 +21,4 @@ export const routes: Routes = [
     path: "**",
     redirectTo: "pantalla-principal",
   }
-
-
 ];

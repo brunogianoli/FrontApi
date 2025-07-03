@@ -1,7 +1,16 @@
-<section class="container mx-auto p-6">
-  <h1 class="text-2x1">Listado de Jugadores</h1>
-<!--  []PARA LOS INPUT-->
-<!--  ()PARA LOS OUTPUT-->
-  <app-tabla-principal [jugadores] = "listadoJugadores" (club) = "redirigirClub($event)" (estadisticas) = "redirigirEstadisticas($event)"></app-tabla-principal>
+<section class="container mx-auto p-8 bg-gradient-to-r from-blue-50 to-indigo-100 rounded-lg shadow-lg">
+  <h1 class="text-3xl font-semibold text-center text-indigo-700 mb-8">Listado de Jugadores</h1>
 
+  <!-- Input y output -->
+  <div class="mb-6">
+    <!-- Puedes agregar más inputs aquí, como filtros o búsqueda -->
+  </div>
+
+  <!-- Tabla Principal -->
+  <app-tabla-principal
+    [jugadores]="listadoJugadores"
+    (club)="redirigirClub($event)"
+    (estadisticas)="redirigirEstadisticas($event)">
+  </app-tabla-principal>
 </section>
+

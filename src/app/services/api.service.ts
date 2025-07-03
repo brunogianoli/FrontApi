@@ -1,6 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {GetEstadisticasJugadorDTO, GetJugadoresDTO} from '../models/models';
+import {GetEstadisticasJugadorDTO, GetJugadoresDTO, PutEstadisticasDTO} from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +15,8 @@ export class ApiService {
   }
   getEstadisticasPorId(id:number){
     return this.http.get<GetEstadisticasJugadorDTO>(`${this.apiUrl}/jugadores/${id}/estadisticas`);
-
-
-
-
-
+  }
+  putEstadisticasJugador(id:number, estadisticas: PutEstadisticasDTO){
+    return this.http.put<void>(`${this.apiUrl}/jugadores/${id}/estadisticas`, estadisticas);
   }
 }

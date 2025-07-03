@@ -1,23 +1,44 @@
-<table>
-  <thead>
-  <tr>
-    <th>Nombre</th>
-    <th>Posicion</th>
-    <th>Debut</th>
-    <th>Acciones</th>
-  </tr>
-  </thead>
-  <tbody>
-    @for (jugador of jugadores; track $index){
-      <tr>
-        <td>{{jugador.nombre              }}<button >Mas info</button></td>
-        <td>{{jugador.posicion}}</td>
-        <td>{{jugador.debut}}</td>
-        <td>
-          <button (click)="estadisticas.emit(jugador.id)" >Estadisticas</button>
-          <button (click)="emitirClub(jugador.id)">Info Club</button>
-        </td>
+<div class="min-h-screen flex items-center justify-center bg-gray-100 px-4 py-8">
+  <div class="overflow-x-auto w-full max-w-5xl bg-white shadow-lg rounded-2xl p-6">
+    <table class="min-w-full table-auto border-collapse">
+      <thead>
+      <tr class="bg-indigo-600 text-white text-left text-sm uppercase">
+        <th class="px-4 py-3 rounded-tl-2xl">Nombre</th>
+        <th class="px-4 py-3">Posición</th>
+        <th class="px-4 py-3">Debut</th>
+        <th class="px-4 py-3 rounded-tr-2xl">Acciones</th>
       </tr>
-    }
-  </tbody>
-</table>
+      </thead>
+      <tbody class="text-gray-700 text-sm divide-y divide-gray-200">
+        @for (jugador of jugadores; track $index) {
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 flex items-center gap-2">
+              {{ jugador.nombre }}
+              <button
+                class="text-indigo-600 hover:underline text-xs"
+              >
+                Más info
+              </button>
+            </td>
+            <td class="px-4 py-3">{{ jugador.posicion }}</td>
+            <td class="px-4 py-3">{{ jugador.debut }}</td>
+            <td class="px-4 py-3 flex flex-wrap gap-2">
+              <button
+                class="px-3 py-1 bg-indigo-500 text-white rounded hover:bg-indigo-600 text-xs"
+                (click)="estadisticas.emit(jugador.id)"
+              >
+                Estadísticas
+              </button>
+              <button
+                class="px-3 py-1 bg-gray-500 text-white rounded hover:bg-gray-600 text-xs"
+                (click)="emitirClub(jugador.id)"
+              >
+                Info Club
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -24,7 +24,6 @@ export class PantallaPrincipalComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription = new Subscription();
 
-
   ngOnInit() {
     this.subscriptions.add(
       this.apiService.getJugadores().subscribe({
@@ -35,8 +34,6 @@ export class PantallaPrincipalComponent implements OnInit, OnDestroy {
         error: (error: Error) => console.error('No se obtuvieron jugadores :(',error),
       })
     )
-
-
   }
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
@@ -45,7 +42,6 @@ export class PantallaPrincipalComponent implements OnInit, OnDestroy {
   redirigirClub(id: number) {
     this.router.navigate(['/club', id]);
   }
-
 
   redirigirEstadisticas(id: number) {
     this.router.navigate(['/estadisticas', id]);

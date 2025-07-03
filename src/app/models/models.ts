@@ -8,6 +8,12 @@ export interface GetJugadoresDTO {
 
 export interface GetEstadisticasJugadorDTO {
   partidosJugados: number;
-  cantGoles: number;
+  cantidadGoles: number;
+  piernaHabil: string;
+}
+
+export interface PutEstadisticasDTO{
+  cantidadGoles: number;
+  partidosJugados: number;
   piernaHabil: string;
 }
