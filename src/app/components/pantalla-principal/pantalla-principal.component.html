@@ -1,0 +1,7 @@
+<section class="container mx-auto p-6">
+  <h1 class="text-2x1">Listado de Jugadores</h1>
+<!--  []PARA LOS INPUT-->
+<!--  ()PARA LOS OUTPUT-->
+  <app-tabla-principal [jugadores] = "listadoJugadores" (club) = "redirigirClub($event)" (estadisticas) = "redirigirEstadisticas($event)"></app-tabla-principal>
+
+</section>

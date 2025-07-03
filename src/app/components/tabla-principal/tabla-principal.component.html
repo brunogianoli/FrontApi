@@ -1,0 +1,23 @@
+<table>
+  <thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Posicion</th>
+    <th>Debut</th>
+    <th>Acciones</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (jugador of jugadores; track $index){
+      <tr>
+        <td>{{jugador.nombre              }}<button >Mas info</button></td>
+        <td>{{jugador.posicion}}</td>
+        <td>{{jugador.debut}}</td>
+        <td>
+          <button (click)="estadisticas.emit(jugador.id)" >Estadisticas</button>
+          <button (click)="emitirClub(jugador.id)">Info Club</button>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
