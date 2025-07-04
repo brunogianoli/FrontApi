@@ -4,7 +4,7 @@ import {TablaPrincipalComponent} from '../tabla-principal/tabla-principal.compon
 import {GetJugadoresDTO} from '../../models/models';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
-import {FiltrosComponent} from '../filtros/filtros.component';
+import {Filtros, FiltrosComponent} from '../filtros/filtros.component';
 
 class Subscriptions {
 }
@@ -26,16 +26,16 @@ export class PantallaPrincipalComponent implements OnInit, OnDestroy {
   subscriptions: Subscription = new Subscription();
 
   ngOnInit() {
-    this.subscriptions.add(
       this.apiService.getJugadores().subscribe({
 
         next: (jugadores: GetJugadoresDTO[]) => {
           this.listadoJugadores = jugadores;
         },
-        error: (error: Error) => console.error('No se obtuvieron jugadores :(',error),
+        error: (error: Error) => console.error('No se obtuvieron jugadores :(', error),
       })
-    )
+
   }
+
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
@@ -46,5 +46,16 @@ export class PantallaPrincipalComponent implements OnInit, OnDestroy {
 
   redirigirEstadisticas(id: number) {
     this.router.navigate(['/estadisticas', id]);
+  }
+
+
+  aplicarFiltros(filtros: Filtros) {
+    console.log({filtros});
+    this.apiService.getJugadores(filtros.club,filtros.posicion,filtros.desde,filtros.hasta).subscribe({
+      next: (jugadores: GetJugadoresDTO[]) => {
+        this.listadoJugadores = jugadores;
+      },
+      error: (error: Error) => console.error('No se obtuvieron jugadores :(', error),
+    })
   }
 }

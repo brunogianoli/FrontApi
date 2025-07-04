@@ -23,3 +23,5 @@ export interface GetCLubesDTO{
   pais: string;
   cantHinchas: number;
 }
+
+
