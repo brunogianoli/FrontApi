@@ -5,9 +5,11 @@ import {GetJugadoresDTO} from '../../models/models';
   selector: 'app-tabla-principal',
   imports: [],
   templateUrl: './tabla-principal.component.html',
-  styleUrl: './tabla-principal.component.css'
 })
+
+
 export class TablaPrincipalComponent {
+
   @Input() jugadores: GetJugadoresDTO[] = [];
 
   @Output() club: EventEmitter<number> = new EventEmitter<number>();

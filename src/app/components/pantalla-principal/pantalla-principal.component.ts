@@ -4,6 +4,7 @@ import {TablaPrincipalComponent} from '../tabla-principal/tabla-principal.compon
 import {GetJugadoresDTO} from '../../models/models';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
+import {FiltrosComponent} from '../filtros/filtros.component';
 
 class Subscriptions {
 }
@@ -11,10 +12,10 @@ class Subscriptions {
 @Component({
   selector: 'app-pantalla-principal',
   imports: [
-    TablaPrincipalComponent
+    TablaPrincipalComponent,
+    FiltrosComponent
   ],
   templateUrl: './pantalla-principal.component.html',
-  styleUrl: './pantalla-principal.component.css'
 })
 export class PantallaPrincipalComponent implements OnInit, OnDestroy {
 

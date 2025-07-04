@@ -17,3 +17,9 @@ export interface PutEstadisticasDTO{
   partidosJugados: number;
   piernaHabil: string;
 }
+
+export interface GetCLubesDTO{
+  nombre: string;
+  pais: string;
+  cantHinchas: number;
+}

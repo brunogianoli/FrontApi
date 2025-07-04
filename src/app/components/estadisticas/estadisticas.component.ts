@@ -11,7 +11,6 @@ import {NgIf} from '@angular/common';
   standalone : true,
   imports: [FormsModule, NgIf],
   templateUrl: './estadisticas.component.html',
-  styleUrl: './estadisticas.component.css'
 })
 export class EstadisticasComponent implements OnInit {
 

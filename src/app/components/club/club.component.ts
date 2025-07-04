@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-club',
   imports: [],
   templateUrl: './club.component.html',
-  styleUrl: './club.component.css'
 })
 export class ClubComponent {
 
