@@ -1,7 +1,7 @@
 import {Component, inject, NgModule, OnInit} from '@angular/core';
 import {GetEstadisticasJugadorDTO, PutEstadisticasDTO} from '../../models/models';
 import {ApiService} from '../../services/api.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterLink} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {Subscription} from 'rxjs';
 import {NgIf} from '@angular/common';
@@ -9,7 +9,7 @@ import {NgIf} from '@angular/common';
 @Component({
   selector: 'app-estadisticas',
   standalone : true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, NgIf, RouterLink],
   templateUrl: './estadisticas.component.html',
 })
 export class EstadisticasComponent implements OnInit {

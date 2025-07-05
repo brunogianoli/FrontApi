@@ -25,7 +25,7 @@ export class ApiService {
   if (desde){params = params.set('desde', desde);}
   if (hasta){params = params.set('hasta', hasta);}
 
-    return this.http.get<GetJugadoresDTO[]>(this.apiUrl+ "/jugadores" , {params} );
+    return this.http.get<GetJugadoresDTO[]>(this.apiUrl+ "/jugadores/search" , {params} );
   }
 
   getEstadisticasPorId(id: number) {
